@@ -9,6 +9,31 @@
     <script src="assets/script.js"></script>
 </head>
 <body>
+        <!--This is the wrapper container with all of the content-->
+        <div id="wrapper">
+            <header>
+                <h1>Password Generator</h1>
+            </header>
+            <!-- Main content -->
+            <div id="content">
+                <h2>Generate a Password</h2>
+                <hr>
+                <!-- Where password will display -->
+                <textarea readonly id="password" placeholder="Your Secure Password"
+                    aria-label="Generated Password"></textarea>
+                <hr>
+                <!-- Buttons -->
+                <div id="btn">
+                    <!-- Generate password button -->
+                    <button id="generate" onclick="begin()">Generate
+                        Password</button>
+                    <!-- Copy to clipboard (might delete) -->
+                    <button id="copy">Copy to Clipboard</button>
+    
+    
+                </div>
+            </div>
+        </div>
 
 
     
