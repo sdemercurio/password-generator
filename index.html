@@ -12,7 +12,7 @@
         <p class="h1" style="font-weight: bold; margin-bottom: 3%; text-align: center;">Password Generator</p>
     </header>
 
-<!-- BOOTSTRAP CARD ELEMENT ADDED -->
+<!-- Bootstrap card -->
      <div class="card shadow-sm bg-white" style="min-width: 40%; max-height: 50%;">
         <div class="card-body">
             <h2 class="card-title" style="font-weight: bold">Generate Password</h2>
@@ -20,8 +20,9 @@
             
             <div class="row justify-content-between m-0">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-<!-- ONCLICK BITTONS SET -->
-                 <button onclick="generatePass()" type="button" class="btn btn-light" style= "border-radius:20px; background-color: darkred; color:white;">Generate Password</button>
+<!-- Buttons -->
+<button type="button" class="btn btn-danger" id="generate" style="float:left; border-radius:40px; padding-right: 30px; padding-left: 30px;">Generate Password</button>
+<button type="button" class="btn btn-light" id="clipboard" style="float:right;  border-radius:40px; padding-right: 30px; padding-left: 30px; background-color: silver; color:white">Copy to clipboard</button>
                 </div>   
             </div>
         </div>
