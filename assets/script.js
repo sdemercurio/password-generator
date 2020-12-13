@@ -1,65 +1,61 @@
-var lowercase;
-var uppercase;
-var numeric;
-var specialChar;
 
-/* Functions for generating random letters, numbers, and characters referencing 
-a character set.
-http://www.net-comber.com/charset.html */
+// Set variables
 
-// To generate random lowercase letters. 
+let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lowercase = "abcdefghijklmnopqrstuvwxyz";
+let numeric = "0123456789";
+let specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+let allChars = [];
 
-function getLowercase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// function Password Generation
+
+function generatePass(){
+    let allChars = [];
+    let securePass = "";
+
+
+let Passlength = prompt("Your password nneds to be between 8 and 128 characters long. How many characters would you like your password to be?");
+
+if(Passlength < 8 || Passlength > 128){
+    alert("Your password nneds to be between 8 and 128 characters long. How many characters would you like your password to be?");
 }
 
-// To generate random uppercase letters. 
-function getUppercase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+// Confirm the rest of character conditions
 
-// To generate random numbers. 
-function getRandomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-
-// To generate random special characters. 
-function getSpecialChar() {
-    const symbols = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-    return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-//function to generate a random password
-
-function generate() {
-    var confirmLength = '';
-//asking user to input desired character length
-    while (isNaN(confirmLength) || confirmLength < 8 || confirmLength > 128) {
-        confirmLength = prompt("What length would you like the password to be? (Between 8 to 128 characters)");
-        if (confirmLength === null) {
-            break;
-        }
-    }
-//getting user input for which character types to use for the password
-    if (confirmLength) {
-        if (confirm("Would you like to use lowercase characters?") == true) {
-            lowerSelection = true
-        } 
-
-        if (confirm("Would you like to use uppercase characters?") == true) {
-            upperSelection = true
-        }
-
-        if (confirm("Would you like to use special characters?") == true) {
-            specialSelection = true
-        }
-
-        if (confirm("Would you like to use numerical characters?") == true) {
-            numberSelection = true
-        }
-//if none of the character types are selected, alerts the user to choose at least one
-        if (lowerSelection === false && upperSelection === false && specialSelection === false && numberSelection === false) {
-            alert("At least one character type must be selected")
-        }
+else{
+    if(confirm("Would you like your password to contain upper case letters?")){
+        Array.prototype.push.apply(allChars, [uppercase]);
     }
 
+    if(confirm("Would you like your password to contain lower case letters?")){
+        Array.prototype.push.apply(allChars, [lowercase]);
+    }
+
+    if(confirm("Would you like your password to contain numbers?")){
+        Array.prototype.push.apply(allChars, [numeric]);
+    }
+
+    if(confirm("Would you like your password to contain symbols?")){
+        Array.prototype.push.apply(allChars, [specialChar]);
+    }
+
+    if(allChars.length===0){
+        alert("It is recommended you select at least 3 types of character to generate a secure password. Please start over.");
+    }
+
+// For loop to uses confirmed information and generates password
+
+    else{
+        for(var i=0; i < Passlength; i++){
+            var random = Math.floor(Math.random()*allChars.length);
+            securePass += allChars[random];
+        }
+    }
+}
+    
+
+// Displayed result
+
+    document.getElementById("password").innerHTML = securePass;
+
+}
