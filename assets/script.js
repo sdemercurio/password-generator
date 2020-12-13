@@ -14,9 +14,9 @@ function generatePass(){
     let securePass = "";
 
 
-let Passlength = prompt("Your password nneds to be between 8 and 128 characters long. How many characters would you like your password to be?");
+let passLength = prompt("Your password nneds to be between 8 and 128 characters long. How many characters would you like your password to be?");
 
-if(Passlength < 8 || Passlength > 128){
+if(passLength < 8 || Passlength > 128){
     alert("Your password nneds to be between 8 and 128 characters long. How many characters would you like your password to be?");
 }
 
@@ -40,13 +40,13 @@ else{
     }
 
     if(allChars.length===0){
-        alert("It is recommended you select at least 3 types of character to generate a secure password. Please start over.");
+        alert("It is recommended you select at least 3 types of characters to generate a secure password. Please start over.");
     }
 
 // For loop to uses confirmed information and generates password
 
     else{
-        for(var i=0; i < Passlength; i++){
+        for(var i=0; i < passLength; i++){
             var random = Math.floor(Math.random()*allChars.length);
             securePass += allChars[random];
         }
