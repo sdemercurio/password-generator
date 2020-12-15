@@ -1,27 +1,25 @@
-
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-// Arrays for each character type.
+// Arrays for each character type
 
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var characterArray = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
-// Empty array
- 
+//Array for user choices
 var resultArray = [];
+
+//Array for resulting password
 var userArray = [];
 
-uppercaseArray [1]
-
-  var numCharacter = prompt ("How much number of Character you want between 8 and 128?");
-  var numbers = confirm ("you want numbers in your password?");
-  var uppercases = confirm ("you want Uppercases in your password?");
-  var lowercases = confirm ("you want lowercases in your password?");
-  var characters = confirm ("you want special characters in your password?");
+  var numCharacter = prompt ("Password must be between 8 to 128 characters long. How many characters would you like your password to be?");
+  var numbers = confirm ("Would you like numbers in your password?");
+  var uppercases = confirm ("Would you like uppercase letters in your password?");
+  var lowercases = confirm ("Would you like you lowercase letters in your password?");
+  var characters = confirm ("Would you like special characters in your password?");
 
 
 // Conditionals
@@ -64,5 +62,5 @@ function writePassword() {
 }
 
 
-// Event listener for generate button
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
