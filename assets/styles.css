@@ -12,4 +12,10 @@ body{
 	align-items: center;
 }
 
-/* Button styles */
+h2 {
+	text-align: center;
+}
+
+button {
+	align-items: flex-start;
+}
