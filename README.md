@@ -21,5 +21,5 @@ Upon accessing the applcation, the user is prompted to input how many characters
 Project is: _in progress_
 This is a project I expect to revise and build upon throughout the course of this program.
 
-Link to deployed page: https://sdemercurio.github.io/demercurio-portfolio/
+Link to deployed page: https://sdemercurio.github.io/password-generator/
 
